@@ -35,7 +35,7 @@ export default function RootLayout({
           },
         }}
       >
-        <body className={cn(font.className, "bg-[#fafafa]")}>
+        <body className={cn(font.className, "bg-[#fafafa] dark:bg-[#313338]")}>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
