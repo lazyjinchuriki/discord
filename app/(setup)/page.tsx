@@ -1,30 +1,30 @@
-import { ModeToggle } from "@/components/mode-toggle";
+import { InitialModal } from "@/components/modals/initial-modal";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
-import { UserButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 const SetupPage = async () => {
-  const profile = initialProfile();
-  const server = await db.server.findFirst({
-    where: {
-      members: {
-        some: {
-          profileId: profile.id,
+  const profile = await initialProfile();
+
+  //find the first server related to this profile id
+  if (profile) {
+    const server = await db.server.findFirst({
+      include: {
+        members: {
+          where: {
+            profileId: profile.id,
+          },
         },
       },
-    },
-  });
-  if (server) {
-    return redirect(`/servers/${server.id}`);
+    });
+    console.log(profile, server, "profile, server");
+
+    if (server) {
+      return redirect(`/servers/${server.id}`);
+    }
   }
-  return (
-    <div>
-      <h1>Create a Server</h1>
-      <ModeToggle />
-      <UserButton />
-    </div>
-  );
+
+  return <InitialModal />;
 };
 
 export default SetupPage;

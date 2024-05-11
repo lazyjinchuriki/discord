@@ -77,7 +77,7 @@ model Member {
 }
 
 enum ChannelType {
-  String
+  TEXT
   AUDIO
   VIDEO
 }
@@ -85,7 +85,7 @@ enum ChannelType {
 model Channel {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   name String
-  type ChannelType @default(String)
+  type ChannelType @default(TEXT)
 
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
