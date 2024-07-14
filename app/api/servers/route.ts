@@ -4,6 +4,44 @@ import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { MemberRole } from "@prisma/client";
 
+export async function DELETE(req: Request) {
+  try {
+    const { serverId } = await req.json();
+    console.log(serverId);
+    const profile = await currentProfile();
+    if (!profile) {
+      return new NextResponse("Unauthorized", {
+        status: 401,
+      });
+    }
+    const server = await db.server.findFirst({
+      where: {
+        id: serverId,
+        profileId: profile.id,
+      },
+    });
+    if (!server) {
+      return new NextResponse("Not Found", {
+        status: 404,
+      });
+    }
+    await db.server.delete({
+      where: {
+        id: serverId,
+      },
+    });
+
+    return new NextResponse("OK", {
+      status: 200,
+    });
+  } catch (error) {
+    console.error("[SERVERS_DELETE]", error);
+    return new NextResponse("Internal Server Error", {
+      status: 500,
+    });
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const { name, imageUrl } = await req.json();
@@ -35,7 +73,6 @@ export async function POST(req: Request) {
             },
           ],
         },
-        
       },
     });
 
