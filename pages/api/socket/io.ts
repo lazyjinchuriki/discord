@@ -17,11 +17,18 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
 		const io = new ServerIO(httpServer, {
 			path: path,
 			// @ts-ignore
-			addTrailingSlash: false,
-			// cors: {
-			// 	origin: "*",
-			// 	methods: ["GET", "POST"],
-			// },
+			// addTrailingSlash: false,
+			cors: {
+				origin: "*",
+				methods: ["GET", "POST"],
+			},
+		});
+		io.on("connection", (socket) => {
+			console.log("New client connected");
+
+			socket.on("disconnect", () => {
+				console.log("Client disconnected");
+			});
 		});
 		res.socket.server.io = io;
 	}
