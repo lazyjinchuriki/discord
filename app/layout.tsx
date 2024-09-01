@@ -15,8 +15,11 @@ import { QueryProvider } from "@/components/providers/query-provider";
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Discord App",
+	title: "Discord",
 	description: "An implementation of Discord in Next.js",
+	icons: {
+		icon: "/images/discord.ico",
+	},
 };
 
 export default function RootLayout({
@@ -44,6 +47,7 @@ export default function RootLayout({
 				}}
 			>
 				<body className={cn(font.className, "bg-[#fafafa] dark:bg-[#313338]")}>
+					<link rel="icon" href="/images/discord.ico" sizes="any" />
 					<ThemeProvider
 						attribute="class"
 						defaultTheme="light"
