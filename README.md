@@ -1,4 +1,4 @@
-Discord
+# Discord
 
 A comprehensive Discord clone built with **Next.js**, providing real-time messaging, voice and video calls, and channel management. Built using modern web technologies, including **Tailwind CSS**, **Clerk** for authentication, **LiveKit** for voice/video, **Socket.io** for live messaging, and **Prisma** with **MongoDB** for robust data management.
 
