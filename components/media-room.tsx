@@ -15,13 +15,13 @@ interface MediaRoomProps {
 
 export const MediaRoom = ({ chatId, video, audio }: MediaRoomProps) => {
 	const { user } = useUser();
-	console.log(user, "user");
+	// console.log(user, "user");
 	const [token, setToken] = useState("");
 
 	useEffect(() => {
-		if (!user?.firstName || !user?.lastName) return;
+		if (!user?.fullName) return;
 
-		const name = `${user.firstName} ${user.lastName}`;
+		const name = `${user.fullName}`;
 
 		(async () => {
 			try {
