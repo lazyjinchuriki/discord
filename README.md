@@ -4,7 +4,7 @@ A comprehensive Discord clone built with **Next.js**, providing real-time messag
 
 ## Tech Stacks
 
-![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Clerk](https://img.shields.io/badge/-Clerk-453C81?style=for-the-badge&logo=clerk&logoColor=white) ![LiveKit](https://img.shields.io/badge/-LiveKit-FF5400?style=for-the-badge&logo=livekit&logoColor=white) ![Socket.io](https://img.shields.io/badge/-Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white) ![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Clerk](https://img.shields.io/badge/-Clerk-453C81?style=for-the-badge&logo=clerk&logoColor=white) ![LiveKit](https://img.shields.io/badge/-LiveKit-FF5400?style=for-the-badge&logo=livekit&logoColor=white) ![Socket.io](https://img.shields.io/badge/-Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white) ![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white) ![Tanstack Query](https://img.shields.io/badge/-TanStack%20Query-FF4154?style=for-the-badge&logo=react-query&logoColor=white)
 
 ## Features
 
@@ -18,9 +18,13 @@ A comprehensive Discord clone built with **Next.js**, providing real-time messag
 - **Responsive Design**: The UI is fully responsive and works seamlessly across all devices.
 - **Modern UI Components**: Built with **Tailwind CSS** and **ShadCN** for a modern, clean, and aesthetic user interface.
 - **Database Management**: **MongoDB** with **Prisma ORM** for seamless database interactions and schema management.
+- **Infinite Loading**: Efficiently load messages with infinite scrolling using **TanStack Query**.
 
 ## Screenshots
 
+![Screenshot 1](./assets/screenshot1.png)
+![Screenshot 2](./assets/screenshot2.png)
+![Screenshot 3](./assets/screenshot3.png)
 
 ## Installation
 
@@ -40,6 +44,7 @@ A comprehensive Discord clone built with **Next.js**, providing real-time messag
 3. **Set up environment variables**:
 
    Create a `.env` file in the root directory and add the following variables:
+
 ```env
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_your_clerk_publishable_key
 CLERK_SECRET_KEY=sk_test_your_clerk_secret
@@ -111,4 +116,3 @@ Follow me on my social channels for more updates:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rahul%20Khushalani-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rahul-khushalani-77ab21201/)
 
 ---
-
